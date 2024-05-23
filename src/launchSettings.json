@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "csf.agendaapi": "StartDebugging",
+        "agendaservice.api": "StartDebugging",
+        "agendaservice.backgroundjobs.api": "StartDebugging",
+        "agendaservice.workerprocess": "StartDebugging"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSF.AssyncMessaging.Domain\CSF.AssyncMessaging.Domain.csproj" />
+    <ProjectReference Include="..\CSF.Domain\CSF.Domain.csproj" />
+    <ProjectReference Include="..\CSF.Entities\CSF.Entities.csproj" />
+    <ProjectReference Include="..\CSF.Helpers\CSF.Helpers.csproj" />
+    <ProjectReference Include="..\CSF.Repository.SqlServer\CSF.Repository.SqlServer.csproj" />
+    <ProjectReference Include="..\CSF.Services\CSF.Services.csproj" />
+    <ProjectReference Include="..\CSF.ViewModel\CSF.ViewModel.csproj" />
+    <ProjectReference Include="..\CSF.Entities\CSF.Entities.csproj" />
+    <ProjectReference Include="..\CSF.Helpers\CSF.Helpers.csproj" />
+    <ProjectReference Include="..\CSF.Repository.SqlServer\CSF.Repository.SqlServer.csproj" />
+    <ProjectReference Include="..\CSF.Services\CSF.Services.csproj" />
+  </ItemGroup>
+
+</Project>

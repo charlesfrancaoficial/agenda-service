@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="6.3.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSF.AssyncMessaging.Domain\CSF.AssyncMessaging.Domain.csproj" />
+    <ProjectReference Include="..\CSF.Domain\CSF.Domain.csproj" />
+    <ProjectReference Include="..\CSF.Entities\CSF.Entities.csproj" />
+    <ProjectReference Include="..\CSF.Helpers\CSF.Helpers.csproj" />
+    <ProjectReference Include="..\CSF.ViewModel\CSF.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

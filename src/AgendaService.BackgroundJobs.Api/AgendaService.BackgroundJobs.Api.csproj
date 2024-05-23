@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>00b7f124-3557-49fa-b51f-f44b0e89ef4a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.8.12" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.12" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="10.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSF.AgendaJobs\CSF.AgendaJobs.csproj" />
+    <ProjectReference Include="..\CSF.Domain\CSF.Domain.csproj" />
+    <ProjectReference Include="..\CSF.Entities\CSF.Entities.csproj" />
+    <ProjectReference Include="..\CSF.Helpers\CSF.Helpers.csproj" />
+    <ProjectReference Include="..\CSF.Repository.SqlServer\CSF.Repository.SqlServer.csproj" />
+    <ProjectReference Include="..\CSF.Services\CSF.Services.csproj" />
+    <ProjectReference Include="..\CSF.USerService\CSF.UserService.csproj" />
+    <ProjectReference Include="..\CSF.ViewModel\CSF.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+  agendaservice.workerprocess:
+    image: ${DOCKER_REGISTRY-}agendaserviceworkerprocess
+    build:
+      context: .
+      dockerfile: AgendaService.WorkerProcess/Dockerfile
+    networks:
+      - elastic
+
+  agendaservice.api:
+    image: ${DOCKER_REGISTRY-}agendaserviceapi
+    build:
+      context: .
+      dockerfile: AgendaService.Api/Dockerfile
+    ports:
+      - "5001:5003"
+    networks:
+        - elastic
+
+  agendaservice.backgroundjobs.api:
+    image: ${DOCKER_REGISTRY-}agendaservicebackgroundjobsapi
+    build:
+      context: .
+      dockerfile: AgendaService.BackgroundJobs.Api/Dockerfile
+    ports:
+      - "5003:80"
+      - "5004:443"
+    networks:
+        - elastic
+
+volumes:
+  elasticsearch-data:
+
+networks:
+  elastic:
+    external:
+        name: custom_network
+
+
+
+
