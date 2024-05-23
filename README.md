@@ -1,84 +1,61 @@
 
-# Project Title  
-This is an example of an in-depth ReadMe.  
+# Agenda Service
 
-## Badges  
+This is a .net core microservice example that can be uses as an appointment service. It creates a couple of api's and background services that can be used to send notifications, schedule a service appointment and much more.
 
-Add badges from somewhere like: [shields.io](https://shields.io/)  
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://choosealicense.com/licenses/gpl-3.0/)  
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
+## Tech Stack
 
-# Table of contents  
-1. [Introduction](#introduction)  
-2. [Some paragraph](#paragraph1)  
-    1. [Sub paragraph](#subparagraph1)  
-3. [Another paragraph](#paragraph2)  
+**Client:** React, Redux, TailwindCSS
 
-## Screenshots  
+**Server:** .Net core, Hangfire, RabbitMq
 
-![App Screenshot](https://lanecdr.org/wp-content/uploads/2019/08/placeholder.png)
 
-## Tech Stack  
+## Features
 
-**Client:** React, Redux, TailwindCSS  
+- Restfull Api's to manage appointments
+- Background jobs to send notifications and comunicate to other services
+- Queue comunication
+- Cross platform
 
-**Server:** Node, Express
 
-## Features  
+## Run Locally
+You gonna need [docker desktop](https://www.docker.com/products/docker-desktop) installed or change the connection strings to be able to run it.
 
-- Light/dark mode toggle  
-- Live previews  
-- Fullscreen mode  
-- Cross platform 
+Assuming you have docker installed, let's go to the step by step to run this application.
 
-## Lessons Learned  
+Clone the project
 
-What did you learn while building this project? What challenges did you face and how did you overcome t
+```bash
+  git clone https://github.com/charlesfrancaoficial/agenda-service.git
+```
 
-## Run Locally  
+Go to the project root directory and run docker compose to start the database, kibana, RabbitMQ and the SqlServer
 
-Clone the project  
+```bash
+  docker-compose up -d
+```
 
-~~~bash  
-  git clone https://link-to-project
-~~~
+After that if you go to the docker desktop app and switch to the containers tab, you should see the main services started
 
-Go to the project directory  
+![App Screenshot](https://github.com/charlesfrancaoficial/agenda-service/blob/master/assets/docker-services.png?raw=true)
 
-~~~bash  
-  cd my-project
-~~~
+Now, on your terminal, go to the project src directory and run the following command without the "-d" flag
 
-Install dependencies  
+```bash
+  docker-compose up
+```
 
-~~~bash  
-npm install
-~~~
+After having all the services running you can access the services url's and see it working
 
-Start the server  
+For the Agenda Service API you can open the address: [http://localhost:5001/swagger/index.html](http://localhost:5001/swagger/index.html)
 
-~~~bash  
-npm run start
-~~~
+![App Screenshot](https://github.com/charlesfrancaoficial/agenda-service/blob/master/assets/swagger-index.png?raw=true)
 
-## Environment Variables  
+The project includes database Seeding for a first run without needing any configurations, so you can try the Appointments get method directly on the swagger documentation
 
-To run this project, you will need to add the following environment variables to your .env file  
-`API_KEY`  
+![App Screenshot](https://github.com/charlesfrancaoficial/agenda-service/blob/master/assets/swagger-appointments.png?raw=true)
 
-`ANOTHER_API_KEY` 
 
-## Acknowledgements  
+The service also exposes a working hangfire server at this address: [https://localhost:5004/hangfire](https://localhost:5004/hangfire)
 
-- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-
-## Feedback  
-
-If you have any feedback, please reach out to us at fake@fake.com
-
-## License  
-
-[MIT](https://choosealicense.com/licenses/mit/)
+![App Screenshot](https://github.com/charlesfrancaoficial/agenda-service/blob/master/assets/hangfire.png?raw=true)
